@@ -1,0 +1,55 @@
+templates:
+  - name: moveit2
+    variables:
+      - name: CLASS_NAME
+        default: MyClass
+        description: Name of the class we want to generate
+      - name: PROJECT_NAME
+        default: my_project
+        description: Name of the CMake project
+      - name: ROS2_VERSION
+        default: foxy
+        description: Name of the ROS2 version
+      - name: PACKAGE_DESC
+        description: Package description
+      - name: AUTHOR_NAME
+        default: John
+        description: Author name
+      - name: AUTHOR_LAST_NAME
+        default: Doe
+        description: Author last name
+      - name: AUTHOR_EMAIL
+        default: john@doe.com
+        description: Author email address
+      - name: UNDERLAY_PATH
+        description: The path of the underlay workspace inside the docker image
+        optional: true
+      - name: DOCKER_IMAGE
+        description: Docker image to be used for the CI job
+        optional: true
+    # TODO: Rename to .inja
+    files:
+      - name: .pre-commit-config.yaml
+        output_path: .pre-commit-config.yaml
+      - name: .repos
+        output_path: "{{camelCaseToSnakeCase(PROJECT_NAME)}}.repos" # There's a bug in yaml-cpp
+      - name: build_and_test.yaml
+        output_path: .github/workflows/build_and_test.yaml
+      - name: README.md
+        output_path: README.md
+      - name: .clang-format
+        output_path: .clang-format
+      - name: .clang-tidy
+        output_path: .clang-tidy
+      - name: class_file.cpp
+        output_path: src/{{camelCaseToSnakeCase(CLASS_NAME)}}.cpp
+      - name: class_file.hpp
+        output_path: include/{{camelCaseToSnakeCase(PROJECT_NAME)}}/{{camelCaseToSnakeCase(CLASS_NAME)}}.hpp
+      - name: main.cpp
+        output_path: src/main.cpp
+      - name: class_test.cpp
+        output_path: test/{{camelCaseToSnakeCase(CLASS_NAME)}}_test.cpp
+      - name: CMakeLists.txt
+        output_path: CMakeLists.txt
+      - name: package.xml
+        output_path: package.xml

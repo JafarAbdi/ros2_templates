@@ -1,0 +1,6 @@
+# Used with vcstool, users can download and source of all packages in this.
+repositories:
+  {{camelCaseToSnakeCase(PROJECT_NAME)}}:
+     type: git
+     url: git@github.com:PickNikRobotics/{{camelCaseToSnakeCase(PROJECT_NAME)}}.git
+     version: main

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+    <name>{{camelCaseToSnakeCase(PROJECT_NAME)}}</name>
+    <version>0.0.1</version>
+    <description>{{PACKAGE_DESC}}</description>
+
+    <maintainer email="{{AUTHOR_EMAIL}}">{{AUTHOR_NAME}} {{AUTHOR_LAST_NAME}}</maintainer>
+    <author email="{{AUTHOR_EMAIL}}">{{AUTHOR_NAME}} {{AUTHOR_LAST_NAME}}</author>
+
+    <license>BSD</license>
+
+    <url type="website">https://github.com/PickNikRobotics/{{camelCaseToSnakeCase(PROJECT_NAME)}}</url>
+    <url type="bugtracker">https://github.com/PickNikRobotics/{{camelCaseToSnakeCase(PROJECT_NAME)}}/issues</url>
+    <url type="repository">https://github.com/PickNikRobotics/{{camelCaseToSnakeCase(PROJECT_NAME)}}/</url>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>s
+    <buildtool_depend>eigen3_cmake_module</buildtool_depend>
+    <buildtool_export_depend>eigen3_cmake_module</buildtool_export_depend>
+
+    <depend>eigen</depend>
+    <depend>rclcpp</depend>
+
+    <test_depend>ament_lint_auto</test_depend>
+    <test_depend>ament_lint_common</test_depend>
+
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+</package>
