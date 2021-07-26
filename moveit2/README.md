@@ -112,4 +112,3 @@ ccache must be in front of your regular compiler or it won't be called. It is re
 To configure ccache for more particular uses, set the CC and CXX environment variables before invoking make, cmake, catkin_make or catkin build.
 
 For more information visit the [ccache website](https://ccache.dev/).
-{"mode":"full","isActive":false}
