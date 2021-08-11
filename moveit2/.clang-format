@@ -2,7 +2,6 @@
 BasedOnStyle:  Google
 ColumnLimit:    120
 MaxEmptyLinesToKeep: 1
-SortIncludes: false
 
 SortIncludes: true
 IncludeBlocks: Regroup
